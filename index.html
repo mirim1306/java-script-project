@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>의료인</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">의료인</a>
+            <ul class="nav-links">
+                <li><a href="index.html">홈</a></li>
+                <li><a href="mypage.html">마이페이지</a></li>
+            </ul>
+            <div class="auth-links">
+                <a href="login.html" id="header-login-link">로그인</a> | <a href="register.html" id="header-register-link">회원가입</a>
+                <a href="#" id="header-logout-link" style="display: none;">로그아웃</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="search-section">
+            <input type="text" id="hospital-search-input" placeholder="병원 이름, 진료 과목, 주소 검색">
+            <button id="search-button">검색</button>
+        </div>
+
+        <div class="category-section">
+            <button class="category-btn active" data-category="hospital-list">전체</button>
+            <button class="category-btn" data-category="popular">인기</button>
+            <button class="category-btn" data-category="ad">광고</button>
+            <button class="category-btn" data-category="board">게시판</button>
+        </div>
+
+        <section id="hospital-list-section" class="content-section active">
+            <h2>병원 목록</h2>
+            <div id="hospital-list">
+                </div>
+        </section>
+
+        <section id="board-main-section" class="content-section" style="display: none;">
+            <h2>자유 게시판</h2>
+            <div id="board-list-container">
+                </div>
+
+            <div class="write-board-post-section"> <h4>새 게시글 작성</h4>
+                <form id="board-post-form">
+                    <div class="form-group">
+                        <label for="board-post-title">제목</label>
+                        <input type="text" id="board-post-title" placeholder="게시글 제목을 입력해주세요." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="board-post-content">내용</label>
+                        <textarea id="board-post-content" rows="6" placeholder="내용을 입력해주세요." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">게시글 등록</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="ad-main-section" class="content-section" style="display: none;">
+            <h2>공익 광고</h2>
+            <div id="public-ad-list">
+                </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

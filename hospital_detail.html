@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>의료인 - 병원 상세 정보</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">의료인</a>
+            <ul class="nav-links">
+                <li><a href="index.html">홈</a></li>
+                <li><a href="mypage.html">마이페이지</a></li>
+            </ul>
+            <div class="auth-links">
+                <a href="login.html">로그인</a> | <a href="register.html">회원가입</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container hospital-detail-container">
+        <h2 id="detail-hospital-name"></h2>
+        <div class="detail-info-group">
+            <p><strong>진료과목:</strong> <span id="detail-department"></span></p>
+            <p><strong>주소:</strong> <span id="detail-address"></span></p>
+            <p><strong>전화번호:</strong> <span id="detail-phone"></span></p>
+            <p><strong>운영 시간:</strong> <span id="detail-opening-hours"></span></p>
+            <p><strong>휴일/이용 불가 시간:</strong> <span id="detail-closed-hours"></span></p>
+            <p><strong>의료진 수:</strong> <span id="detail-medical-staff"></span></p>
+            <p><strong>의료 장비/약품 수:</strong> <span id="detail-equipment-count"></span></p>
+            <p><strong>현재 진료 중:</strong> <span id="detail-current-patients"></span>명 / <span id="detail-total-capacity"></span>명</p>
+            <p><strong>설명:</strong> <span id="detail-description"></span></p>
+        </div>
+        
+        <div class="reservation-section">
+            <h3>진료 예약</h3>
+            <form id="reservation-form">
+                <div class="form-group">
+                    <label for="reservation-department">진료과목 선택</label>
+                    <select id="reservation-department" required>
+                        </select>
+                </div>
+                <div class="form-group">
+                    <label for="reservation-date">날짜</label>
+                    <input type="date" id="reservation-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="reservation-time">시간</label>
+                    <input type="time" id="reservation-time" required>
+                </div>
+                <button type="submit" class="submit-btn">예약하기</button>
+            </form>
+        </div>
+
+        <div class="board-section"> <h3>병원 게시판</h3> <div id="hospital-posts"> </div>
+
+            <div class="write-post-section"> <h4>게시글 작성</h4> <form id="post-form"> <div class="form-group">
+                        <label for="post-title">제목</label> <input type="text" id="post-title" placeholder="제목을 입력해주세요." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="post-content">내용</label> <textarea id="post-content" rows="4" placeholder="내용을 입력해주세요." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">게시글 제출</button> </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/hospital_detail.js"></script>
+</body>
+</html>

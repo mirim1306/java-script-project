@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>의료인 - 마이페이지</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">의료인</a>
+            <ul class="nav-links">
+                <li><a href="index.html">홈</a></li>
+                <li><a href="mypage.html">마이페이지</a></li>
+            </ul>
+            <div class="auth-links">
+                <a href="login.html" id="header-login-link">로그인</a> | <a href="register.html" id="header-register-link">회원가입</a>
+                <a href="#" id="header-logout-link" style="display: none;">로그아웃</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mypage-container">
+        <h2 id="mypage-title">마이페이지</h2>
+
+        <section class="user-info-section">
+            <h3>내 정보</h3>
+            <div id="user-info">
+                <p><strong>아이디:</strong> <span id="display-username">로그인 필요</span></p>
+                <p><strong>이메일:</strong> <span id="display-email">로그인 필요</span></p>
+                </div>
+        </section>
+
+        <section class="my-reservations-section">
+            <h3>내 예약 내역</h3>
+            <div id="reservation-list" class="reservation-cards-container">
+                <p id="no-reservations">예약 내역이 없습니다.</p>
+            </div>
+        </section>
+        
+        <button id="logout-button" class="submit-btn" style="display: none; margin-top: 30px;">로그아웃</button>
+    </main>
+
+    <script src="js/mypage.js"></script>
+</body>
+</html>

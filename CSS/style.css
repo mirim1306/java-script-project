@@ -1,0 +1,646 @@
+/* 기본 설정 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* 헤더 */
+.main-header {
+    background-color: #6a9bd8;
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 25px;
+}
+
+.nav-links a, .auth-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .auth-links a:hover {
+    color: #e0f2f7;
+}
+
+.auth-links {
+    font-size: 0.95em;
+}
+
+/* 검색 섹션 */
+.search-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+.search-section input[type="text"] {
+    flex-grow: 1;
+    max-width: 600px;
+    padding: 15px 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1.2em;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-section input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.2);
+    outline: none;
+}
+
+.search-section button {
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.search-section button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-box input[type="text"] {
+    width: 60%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 1.1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-box input[type="text"]:focus {
+    border-color: #6a9bd8;
+}
+
+.search-box button {
+    padding: 12px 25px;
+    background-color: #6a9bd8;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.search-box button:hover {
+    background-color: #558ac7;
+}
+
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.category-btn {
+    padding: 10px 20px;
+    background-color: #e2f0fb;
+    color: #6a9bd8;
+    border: 1px solid #a8d7ff;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.category-btn:hover, .category-btn.active {
+    background-color: #6a9bd8;
+    color: white;
+    border-color: #6a9bd8;
+}
+
+/* 병원 목록 섹션 */
+.hospital-list-section h2 {
+    text-align: center;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+.hospital-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.hospital-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    padding: 20px;
+    transition: transform 0.2s ease;
+    margin-bottom: 10px;
+}
+
+.hospital-card:hover {
+    transform: translateY(-5px);
+}
+
+.hospital-card h3 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.hospital-card p {
+    color: #666;
+    margin-bottom: 5px;
+    font-size: 0.95em;
+}
+
+.hospital-card .current-patients {
+    font-weight: bold;
+    color: #007bff; /* 파란색 */
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.hospital-card .view-detail-btn {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.hospital-card .view-detail-btn:hover {
+    background-color: #0056b3;
+}
+
+/* 인증 폼 (회원가입/로그인) */
+.auth-form-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    max-width: 500px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.auth-form-container h2 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group select {
+    width: calc(100% - 20px);
+    padding: 12px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #6a9bd8;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #6a9bd8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #558ac7;
+}
+
+.auth-link-text {
+    margin-top: 25px;
+    color: #666;
+}
+
+.auth-link-text a {
+    color: #6a9bd8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-link-text a:hover {
+    text-decoration: underline;
+}
+
+/* 병원 상세 페이지 */
+.hospital-detail-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.hospital-detail-container h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.detail-info-group p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 5px;
+}
+
+.detail-info-group strong {
+    color: #444;
+}
+
+.reservation-section, .reviews-section {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.reservation-section h3, .reviews-section h3 {
+    color: #333;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.review-card {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.review-card p {
+    margin-bottom: 5px;
+    font-size: 0.95em;
+}
+
+.review-card strong {
+    color: #007bff;
+}
+
+.review-card .review-date {
+    font-size: 0.85em;
+    color: #999;
+    text-align: right;
+}
+
+/* 마이페이지 컨테이너 */
+.mypage-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    margin-top: 50px;
+}
+
+.mypage-container h2,
+.mypage-container h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.user-info-section,
+.my-reservations-section {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.user-info-section p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.user-info-section strong {
+    color: #333;
+}
+
+/* 예약 카드 컨테이너 */
+.reservation-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.reservation-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+}
+
+.reservation-card:hover {
+    transform: translateY(-3px);
+}
+
+.reservation-card h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #6a9bd8;
+    font-size: 1.2em;
+}
+
+.reservation-card p {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    color: #666;
+}
+
+.reservation-card .reservation-status {
+    font-weight: bold;
+    color: #28a745;
+    margin-top: 15px;
+}
+
+/* 예약 카드 내 취소 버튼 */
+.reservation-card .cancel-reservation-btn {
+    display: block;
+    width: 100%;
+    padding: 8px 15px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.reservation-card .cancel-reservation-btn:hover {
+    background-color: #c82333;
+}
+
+/* 게시글 카드 스타일 */
+.post-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.post-card h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.post-card p {
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+
+.post-card .post-date {
+    font-size: 0.85em;
+    color: #888;
+    text-align: right;
+    margin-top: 10px;
+}
+
+
+/* 게시글 작성 섹션 */
+.write-post-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed #eee;
+    text-align: center;
+}
+
+.write-post-section h4 {
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.write-post-section .form-group {
+    margin-bottom: 15px;
+}
+
+.write-post-section input[type="text"],
+.write-post-section textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.write-post-section textarea {
+    resize: vertical;
+}
+
+.write-post-section .submit-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+}
+/* --- 게시판 목록 스타일 (main.js용) --- */
+.board-post-item {
+    background-color: #fcfcfc;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.board-post-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.board-post-item h4 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #007bff;
+    font-size: 1.15em;
+}
+
+.board-post-item p {
+    margin-bottom: 5px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.board-post-item .post-date {
+    font-size: 0.8em;
+    color: #888;
+    text-align: right;
+    margin-top: 10px;
+}
+
+/* --- 자유 게시판 작성 섹션 (index.html용) --- */
+.write-board-post-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed #eee;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.write-board-post-section h4 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.write-board-post-section .form-group {
+    margin-bottom: 15px;
+}
+
+.write-board-post-section input[type="text"],
+.write-board-post-section textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.write-board-post-section textarea {
+    resize: vertical;
+}
+
+.write-board-post-section .submit-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    background-color: #28a745;
+}
+
+.write-board-post-section .submit-btn:hover {
+    background-color: #218838;
+}
+
+/* --- 공익 광고 목록 스타일 (main.js용) --- */
+.public-ad-item {
+    background-color: #fff;
+    border: 1px solid #ccffee;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.public-ad-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.public-ad-item h4 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: #007bff;
+    font-size: 1.4em;
+    line-height: 1.3;
+}
+
+.public-ad-item h4 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.public-ad-item h4 a:hover {
+    text-decoration: underline;
+}
+
+.public-ad-item p {
+    color: #333;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    font-size: 1.05em;
+}
